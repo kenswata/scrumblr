@@ -1,11 +1,9 @@
 .card {
 	width: 230px;
-	height: 152px;
+	height: 162px;
 	xpadding: 5px; float: left;
 	xmargin: 0 10px 10px 0;
 	font-size: .9em;
-
-
 
 	overflow: hidden;
 
@@ -44,10 +42,10 @@
 	overflow: hidden;
 	display: block;
 	width: 158px;
-	height: 88px;
+	height: 120px;
 	margin: 5px 23px 0px 34px;
 
-	font-family: 'Covered By Your Grace',"Arial Rounded MT Bold", arial, serif;
+	font-family: 'Meiryo UI','Covered By Your Grace',"Arial Rounded MT Bold", arial, serif;
 	font-size: 18px;
 	letter-spacing: 0px;
 
@@ -56,9 +54,10 @@
 	opacity: 1;
 
 	color: black;
-	text-align: center;
+	/*text-align: center;*/
+	text-align: left;
 	padding-top: 18px;
-	xline-height: 16px;
+	xline-height: 17px;
 
 	xopacity: .8;
 
