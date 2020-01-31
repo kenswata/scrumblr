@@ -660,6 +660,12 @@ function exportJson( client, data )
 					db.getBoardSize( room, function(size) {
 						if (theme === null) theme = 'bigcards';
 						if (size === null) size = { width: data.width, height: data.height };
+						for (i = 0; i < cards.length; i++) {
+							cards[i].text = escape(cards[i].text);
+						}
+						for (i = 0; i < columns.length; i++){
+							columns[i] = escape(columns[i]);
+						}
 						result = JSON.stringify({
 							cards: cards,
 							columns: columns,
@@ -696,6 +702,9 @@ function importJson( client, data )
 				var cards2 = new Array();
 				for (var i = 0; i < cards.length; i++) {
 					var card = cards[i];
+					if (card.text !== undefined) {
+						card.text = unescape(card.text);
+					}
 					if (card.id         !== undefined && card.colour !== undefined
 						&& card.rot     !== undefined && card.x      !== undefined
 						&& card.y       !== undefined && card.text   !== undefined
@@ -726,7 +735,7 @@ function importJson( client, data )
 				columns      = data.columns;
 				var columns2 = new Array();
 				for (var i = 0; i < columns.length; i++) {
-					var column = scrub(columns[i]);
+					var column = scrub(unescape(columns[i]));
 					if (typeof(column) === 'string') {
 						db.createColumn(room, column);
 						columns2.push(column);
