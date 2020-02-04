@@ -657,6 +657,10 @@ img {
 	padding-top: 0;
 	padding-bottom: 0;
 }
+.content h6 {
+	color: red;
+	xcolor: red;
+}
 .export button, .import * {
     margin-right: 15px;
 }
